@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function(){
 
 
+    
+
+
+
     const langBtn = document.getElementById('lang-btn')
     const langList = document.getElementById('lang-list')
 
@@ -85,5 +89,44 @@ document.addEventListener('DOMContentLoaded', function(){
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     scrollArrow.addEventListener('click', function(){ scrollToTop() })
+
+
+
+    function toggleBackground(){
+        const gallery2 = document.querySelectorAll('.gallery2')
+        const slogans = [
+            'Pomożemy Ci zdobyć rozpoznawalność.',
+            'Dobrze stworzone social media to klucz do sukcesu.',
+            'Stworzymy stronę internetową dla Twojej firmy.',
+            'Gwarancja jakości sfotografowanych wspomnień.',
+            'Lorem ipsum sorry dolores.'
+        ]
+        
+        function toggleOpaqueClass(element){
+            if(element.classList.contains('opaque')){
+                element.classList.remove('opaque')
+            }else{
+                element.classList.add('opaque')
+            }
+            console.log(element)
+        }
+        function toggleSlogan(index){
+            const slogan = document.querySelector('.slogan')
+            slogan.innerHTML = slogans[index]
+        }
+
+        for(let i = 0; i < gallery2.length; i++){
+            setTimeout(() => toggleOpaqueClass(gallery2[i]), (i+1) * 5000)
+            setTimeout(() => toggleSlogan(i), (i+1) * 5000)
+            if(i != 0){
+                setTimeout(() => toggleOpaqueClass(gallery2[i-1]), (i+1) * 5000)
+            }else{
+                setTimeout(() => toggleOpaqueClass(gallery2[gallery2.length - 1]), (i+1)*5000)
+            }
+        }
+    }
+    toggleBackground()
+    const galleryLenght = document.querySelectorAll('.gallery2').length
+    setInterval(() => toggleBackground(), galleryLenght*5000)
 
 })

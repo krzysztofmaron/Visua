@@ -32,8 +32,7 @@ nav {
     cursor: pointer;
 }
     .nav-logo-container img {
-        width: 6.5vw;
-        height: 2.25vw;
+        width: 6vw;
     }
 
     .nav-section-2 {
@@ -70,13 +69,28 @@ nav {
     
     .gallery {
         width: 70%;
-        background-image: url('2_ig_blur.png');
-        background-size: cover;
-        background-position: center;
         height: 30vw;
-
         color: #ffffff;
         font-family: "Montserrat", sans-serif;
+    }
+    .gallery2 {
+        position: absolute;
+        width: 70%;
+        height: 30vw;
+        margin-top: 5vw;
+        background-position: center;
+        background-size: cover;
+        opacity: 0;
+        transition: opacity .5s ease-in-out;
+    }
+    #g1 { background-image: url('src/crac.png'); }
+    #g2 { background-image: url('src/bg33.png'); }
+    #g3 { background-image: url('src/00003-1099143651.png'); }
+    #g4 { background-image: url('src/00007-2911900189.png'); }
+    #g5 { background-image: url('bg11.png'); }
+
+    .gallery2.opaque {
+        opacity: 1;
     }
         .slogan {
             margin-top: 9vw;
@@ -87,7 +101,7 @@ nav {
             margin-left: 7.95vw;
         }
         .offer {
-            margin-top: 1vw;
+            margin-top: 13vw;
             font-weight: 600;
             font-size: 5rem;
             text-transform: uppercase;
@@ -95,7 +109,12 @@ nav {
         }
         .offer-btn-container {
             margin-left: 45vw;
-            margin-top: 2vw;
+            margin-top: 20vw;
+        }
+        .slogan, .offer, .offer-btn-container {
+            position: absolute;
+            z-index: 2;
+            filter: drop-shadow(0px 5px 10px rgb(0, 0, 0)) !important;
         }
         .offer-btn {
             position: absolute;

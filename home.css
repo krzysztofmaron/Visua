@@ -33,6 +33,7 @@ nav {
 }
     .nav-logo-container img {
         width: 6vw;
+        /* filter: drop-shadow(0px 0px 25px yellow); */
     }
 
     .nav-section-2 {
@@ -40,7 +41,8 @@ nav {
         justify-content: space-evenly;
         height: 4vw;
         margin-right: 3.5vw;
-        gap: 4.5vw;
+        gap: 3vw;
+        align-items: center;
     }
     .nav-home, .nav-about, .nav-portfolio, .nav-contact {
         font-family: "Montserrat", sans-serif;
@@ -54,11 +56,21 @@ nav {
         cursor: pointer;
         text-transform: capitalize;
     }
+    .nav-line {
+        width: 2px;
+        height: 2vw;
+        background-color: rgb(70, 70, 70);
+        margin-top: 1vw;
+        border-radius: 5px;
+    }
     .nav-contact {
-        margin-left: 1.75vw;
+        margin-left: 2.25vw;
+        border: 1px solid #FFD600;
+        height: 2vw;
+        line-height: 2vw;
     }
     .nav-portfolio {
-        margin-right: 1.75vw;
+        margin-right: 2.25vw;
     }
     .nav-home:hover, .nav-about:hover, .nav-portfolio:hover, .nav-contact:hover {
         color: #FFD600;
@@ -68,6 +80,7 @@ nav {
     }
     
     .gallery {
+        margin-top: 1vw; /* DODATKOWO */
         width: 70%;
         height: 30vw;
         color: #ffffff;
@@ -77,7 +90,7 @@ nav {
         position: absolute;
         width: 70%;
         height: 30vw;
-        margin-top: 5vw;
+        margin-top: 6vw; /* DODATKOWO +1VW */
         background-position: center;
         background-size: cover;
         opacity: 0;
@@ -238,11 +251,13 @@ footer {
             border: none;
             color: white;
         }
-
+        .vid-section {
+            margin-top: 1vw;
+        }
         .vid-section h1 {
             margin-top: 2vw;
             color: #ffffff;
-            font-family: Montserrat;
+            font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
             font-size: 3rem;
             text-align: center;
@@ -404,4 +419,23 @@ footer {
 }
 ::-webkit-scrollbar-track {
     background-color: #252525;
+}
+
+.gallery ul {
+    position: absolute;
+    display: flex;
+    list-style-type: none;
+    gap: .5vw;
+    margin-left: 32.75vw;
+    margin-top: 28vw;
+}
+.gallery ul li {
+    width: 12px;
+    height: 12px;
+    z-index: 1;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+.active {
+    background-color: white;
 }

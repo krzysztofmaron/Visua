@@ -101,14 +101,16 @@ document.addEventListener('DOMContentLoaded', function(){
             'Gwarancja jakości sfotografowanych wspomnień.',
             'Lorem ipsum sorry dolores.'
         ]
-        
+        const dots = document.querySelectorAll('.dot')
+        function toggleActiveDot(element){
+            element.classList.toggle('active')
+        }
         function toggleOpaqueClass(element){
             if(element.classList.contains('opaque')){
                 element.classList.remove('opaque')
             }else{
                 element.classList.add('opaque')
             }
-            console.log(element)
         }
         function toggleSlogan(index){
             const slogan = document.querySelector('.slogan')
@@ -116,12 +118,18 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         for(let i = 0; i < gallery2.length; i++){
+            toggleSlogan(i)
             setTimeout(() => toggleOpaqueClass(gallery2[i]), (i+1) * 5000)
+            setTimeout(() => toggleActiveDot(dots[i]), (i+1) * 5000)
             setTimeout(() => toggleSlogan(i), (i+1) * 5000)
             if(i != 0){
                 setTimeout(() => toggleOpaqueClass(gallery2[i-1]), (i+1) * 5000)
+                setTimeout(() => toggleActiveDot(dots[i-1]), (i+1) * 5000)
+                console.log(dots[i-1])
             }else{
                 setTimeout(() => toggleOpaqueClass(gallery2[gallery2.length - 1]), (i+1)*5000)
+                setTimeout(() => toggleActiveDot(dots[dots.length - 1]), (i+1)*5000)
+                console.log(dots[dots.length - 1])
             }
         }
     }

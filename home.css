@@ -60,14 +60,21 @@ nav {
         width: 2px;
         height: 2vw;
         background-color: rgb(70, 70, 70);
-        margin-top: 1vw;
         border-radius: 5px;
     }
     .nav-contact {
-        margin-left: 2.25vw;
-        border: 1px solid #FFD600;
-        height: 2vw;
+        display: flex;
+        flex-direction: column;
+        gap: .05vw
+    }
+    .nav-contact p {
+        margin-top: .2325vw;
         line-height: 2vw;
+    }
+    .contact-line {
+        height: 2px;
+        width: 100%;
+        background-color: #FFD600;
     }
     .nav-portfolio {
         margin-right: 2.25vw;

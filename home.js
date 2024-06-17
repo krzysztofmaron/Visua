@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         langContent.innerHTML = `
             <div class="img-label" id="lang-label">
-            <img src="${language}" alt="">
+            <img src="src/${language}" alt="">
             <p>${label}</p>
             </div>
             <div class="arr rotated" id="lang-arr"></div>

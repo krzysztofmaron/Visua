@@ -137,4 +137,59 @@ document.addEventListener('DOMContentLoaded', function(){
     const galleryLenght = document.querySelectorAll('.gallery2').length
     setInterval(() => toggleBackground(), galleryLenght*5000)
 
+
+    // LIGHT MODE SWITCH
+    const darkModeSwitch = document.querySelector('.dark-mode-switch')
+    darkModeSwitch.addEventListener('click', function(){
+
+        const body = document.querySelector('body')
+        const footer = document.querySelector('footer')
+        
+        const vids = document.querySelectorAll('.vid')
+        const navLogo = document.querySelector('.nav-logo-container')
+
+        const fb = document.getElementById('fb')
+        const yt = document.getElementById('yt')
+        const ig = document.getElementById('ig')
+        const tt = document.getElementById('tt')
+        const lin = document.getElementById('lin')
+
+        const darkModeButton = document.querySelector('.dark-mode-button')
+
+        let currentState = 0 // 0 - dark, 1 - light
+
+        if (body.classList.contains('light-mode')){
+            currentState = 1
+        }else{
+            currentState = 0
+        }
+        if (currentState == 0) {
+            vids.forEach(e => {
+                e.innerHTML = `<img src="src/video_blank_light.png" alt=""></img>`
+            })
+            navLogo.innerHTML = `<img src="src/logobig_light.png" alt="">`
+            fb.innerHTML = `<img src="src/facebook_light.png" alt="">`
+            yt.innerHTML = `<img src="src/youtube_light.png" alt="">`
+            ig.innerHTML = `<img src="src/instagram_light.png" alt="">`
+            tt.innerHTML = `<img src="src/tiktok_light.png" alt="">`
+            lin.innerHTML = `<img src="src/linkedin_light.png" alt="">`            
+            darkModeButton.innerHTML = `<i class="fa-solid fa-sun"></i>`
+        }else{
+            vids.forEach(e => {
+                e.innerHTML = `<img src="src/video_blank.png" alt=""></img>`
+            })
+            navLogo.innerHTML = `<img src="src/logobig_dark.png" alt="">`
+            fb.innerHTML = `<img src="src/facebook.png" alt="">`
+            yt.innerHTML = `<img src="src/youtube.png" alt="">`
+            ig.innerHTML = `<img src="src/instagram.png" alt="">`
+            tt.innerHTML = `<img src="src/tiktok.png" alt="">`
+            lin.innerHTML = `<img src="src/linkedin.png" alt="">`
+            darkModeButton.innerHTML = `<i class="fa-solid fa-moon"></i>`
+        }
+
+        body.classList.toggle('light-mode')
+        footer.classList.toggle('light-mode')
+        
+
+    })
 })
